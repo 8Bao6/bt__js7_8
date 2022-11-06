@@ -42,6 +42,21 @@ function soNhoNhat() {
   document.getElementById("infoSoNhoNhat").innerHTML = result;
 }
 
+function soDuongNhoNhat() {
+  for (var i = 0; i < listNumber.length; i++) {
+    if (listNumber[i] > 0) {
+      minDuong = listNumber[i]
+    }
+  }
+  for (var i = 1; i < minDuong.length; i++) {
+    var number = minDuong[0]
+    if (number > minDuong[i]) {
+      number = minDuong[i]
+    }
+
+  }
+  document.getElementById("infoSoDuongNhoNhat").innerHTML = minDuong;
+}
 
 
 
