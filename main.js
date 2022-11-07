@@ -66,3 +66,40 @@ function soDuongNhoNhat() {
   }
   document.getElementById("infoSoDuongNhoNhat").innerHTML = rs;
 }
+
+function sapXepTangDan() {
+  for (var i = 0; i < listNumber.length - 1; i++) {
+    for (var j = i + 1; j < listNumber.length; j++) {
+      if (listNumber[i] > listNumber[j]) {
+        var temp = listNumber[i];
+        listNumber[i] = listNumber[j];
+        listNumber[j] = temp;
+      }
+    }
+  }
+  var result = "Kết quả tăng dần: " + listNumber;
+  document.getElementById("infoTangDan").innerHTML = result;
+}
+
+
+function soSanh() {
+  var soAm = 0;
+  var soDuong = 0;
+  var rs = "";
+  for (var i = 0; i < listNumber.length; i++) {
+    if (listNumber[i] < 0) {
+      soAm++;
+    } if (listNumber[i] > 0) {
+      soDuong++;
+    }
+
+  }
+  if (soAm == soDuong) {
+    rs = "Số lượng số: Âm = Dương";
+  } if (soDuong > soAm) {
+    rs = "Số lượng số: Dương > Âm";
+  } if (soDuong < soAm) {
+    rs = "Số lượng số: Dương < Âm";
+  }
+  document.getElementById("infoSoSanh").innerHTML = rs;
+}
