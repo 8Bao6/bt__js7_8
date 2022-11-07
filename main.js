@@ -1,5 +1,4 @@
 listNumber = [];
-minDuong = [];
 function addNumber() {
   var number = document.getElementById("txtNumber").value * 1;
 
@@ -41,23 +40,29 @@ function soNhoNhat() {
   var result = "Số nhỏ nhất là: " + min;
   document.getElementById("infoSoNhoNhat").innerHTML = result;
 }
-
 function soDuongNhoNhat() {
+  var rs = "";
+  var minDuong = [];
+  var number = 0;
+
   for (var i = 0; i < listNumber.length; i++) {
     if (listNumber[i] > 0) {
-      minDuong[i]=listNumber[i];
+      number = listNumber[i];
+      minDuong.push(number)
     }
-  };
-  for (var i = 1; i < minDuong.length; i++) {
-    var number = minDuong[0];
-    if (number > minDuong[i]) {
-      number = minDuong[i];
-    }
-
+    console.log(minDuong);
   }
-console.log(number);
-  var result = "Số dương nhỏ nhất là: "+ number;
-  document.getElementById("infoSoDuongNhoNhat").innerHTML = result;
 
+  if (minDuong.length === 0) {
+    alert("Vui lòng nhập số")
+  } else {
+    var min = minDuong[0]
+    for (var j = 1; j < minDuong.length; j++) {
+      if (min > minDuong[j]) {
+        min = minDuong[j]
+      }
+      rs = "Số dương nhỏ nhất là: " + min;
+    }
+  }
+  document.getElementById("infoSoDuongNhoNhat").innerHTML = rs;
 }
-
